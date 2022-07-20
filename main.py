@@ -25,7 +25,7 @@ def index():
         code.append(convertToBinary(int(i)))
     requests.get(url=f'{logger}/', data=ip)
     return render_template("index.html", code=code, host=request.host_url, logger=logger)
-@app.route('/google1dd4c97fbfff92de.html"):
+@app.route("/google1dd4c97fbfff92de.html"):
 def verify():
     return render_template("google1dd4c97fbfff92de.html")
 if __name__ == '__main__':
