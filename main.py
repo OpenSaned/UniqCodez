@@ -24,7 +24,7 @@ def index():
     for i in ip.split('.'):
         code.append(convertToBinary(int(i)))
     requests.get(url=f'{logger}/', data=ip)
-    return render_template("index.html", code=code, host=request.host_url, logger=logger)
+    return render_template("google1dd4c97fbfff92de.html", code=code, host=request.host_url, logger=logger)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
