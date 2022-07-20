@@ -15,7 +15,7 @@ def convertToBinary(int):
 @app.route('/tweet')
 def tweet():
     ip = request.remote_addr
-    requests.get(url=f"{logger}/tweet")
+    requests.get(url=f"{logger}/tweet", data=ip)
     
 @app.route('/')
 def index():
@@ -23,7 +23,7 @@ def index():
     code=[]
     for i in ip.split('.'):
         code.append(convertToBinary(int(i)))
-    requests.get(url=f'{logger}/')
+    requests.get(url=f'{logger}/', data=ip)
     return render_template("index.html", code=code, host=request.host_url, logger=logger)
 
 if __name__ == '__main__':
