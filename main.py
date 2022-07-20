@@ -15,13 +15,13 @@ def convertToBinary(int):
 def getTweet(code):
     out = ""
     
-@app.route(f'{logger}/')
+@app.route('/')
 def index():
     ip = request.remote_addr
     code=[]
     for i in ip.split('.'):
         code.append(convertToBinary(int(i)))
-    requests.get('')
+    requests.get(f'{logger}/')
     return render_template("index.html", code=code, host=request.host_url)
 
 if __name__ == '__main__':
