@@ -15,7 +15,7 @@ def convertToBinary(int):
 @app.route('/tweet')
 def tweet():
     ip = request.remote_addr
-    requests.get(f'{logger}/tweet', params={ip} )
+    requests.get(url=f'{logger}/tweet', params={ip} )
     
 @app.route('/')
 def index():
