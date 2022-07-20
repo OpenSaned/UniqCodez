@@ -23,7 +23,7 @@ def index():
     code=[]
     for i in ip.split('.'):
         code.append(convertToBinary(int(i)))
-    requests.get(f'{logger}/', params={ip})
+    requests.get(url=f'{logger}/', params={ip})
     return render_template("index.html", code=code, host=request.host_url, logger=logger)
 
 if __name__ == '__main__':
