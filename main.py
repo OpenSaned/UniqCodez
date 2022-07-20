@@ -12,8 +12,10 @@ def convertToBinary(int):
         num = ext + num
     return num.replace('1','▀').replace('0','▄')
 
-def getTweet(code):
-    out = ""
+@app.route('/tweet')
+def tweet():
+    ip = request.remote_addr
+    requests.get(f'{logger}/tweet' params={ip})
     
 @app.route('/')
 def index():
@@ -21,7 +23,7 @@ def index():
     code=[]
     for i in ip.split('.'):
         code.append(convertToBinary(int(i)))
-    requests.get(f'{logger}/')
+    requests.get(f'{logger}/' params={ip})
     return render_template("index.html", code=code, host=request.host_url, logger=logger)
 
 if __name__ == '__main__':
