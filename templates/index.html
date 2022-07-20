@@ -15,7 +15,7 @@
         {{ code[2] }}<br>
         {{ code[3] }}<br>
     </div>
-    <a onclick="fetch('{{ logger }}/tweet')" href="https://twitter.com/intent/tweet?text=My%20%23UNIQ%20Code%20is%0A%0A{{ code[0] }}%0A{{ code[1] }}%0A{{ code[2] }}%0A{{ code[3] }}%0A%0AWhat's yours. {{ host }}" target="_blank">
+    <a onclick="fetch('/tweet')" href="https://twitter.com/intent/tweet?text=My%20%23UNIQ%20Code%20is%0A%0A{{ code[0] }}%0A{{ code[1] }}%0A{{ code[2] }}%0A{{ code[3] }}%0A%0AWhat's yours. {{ host }}" target="_blank">
         <div class="share">
             <img src="{{ url_for('static',filename='twitter.png') }}">
             <h1>Tweet</h1>
