@@ -1,9 +1,10 @@
 from flask import Flask, request, render_template
 from time import time
 import os
+import requests
 
+logger = os.environ.get('LOG_SERVER')
 app = Flask(__name__)
-
 def convertToBinary(int):
     num = bin(int).replace("0b", "")
     if len(num) < 8:
@@ -13,21 +14,14 @@ def convertToBinary(int):
 
 def getTweet(code):
     out = ""
-
-@app.route('/tweet')
-def tweet():
-    ip = request.remote_addr
-    with open("tweet.log", 'a') as file:
-        file.write(f"{time()} - {ip}\n")
     
-@app.route('/')
+@app.route(f'{logger}/')
 def index():
     ip = request.remote_addr
     code=[]
     for i in ip.split('.'):
         code.append(convertToBinary(int(i)))
-    with open("http.log", 'a') as file:
-        file.write(f"{time()} - {ip}\n")
+    requests.get('')
     return render_template("index.html", code=code, host=request.host_url)
 
 if __name__ == '__main__':
