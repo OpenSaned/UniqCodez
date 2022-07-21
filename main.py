@@ -14,12 +14,12 @@ def convertToBinary(int):
 
 @app.route('/tweet')
 def tweet():
-    ip = request.remote_addr
+    ip = request.headers['X-Forwarded-For']
     requests.get(url=f"{logger}/tweet", data=ip)
     
 @app.route('/')
 def index():
-    ip = request.remote_addr
+    ip = request.headers['X-Forwarded-For']
     print("Got request from " + ip)
     code=[]
     for i in ip.split('.'):
