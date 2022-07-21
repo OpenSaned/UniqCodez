@@ -20,6 +20,7 @@ def tweet():
 @app.route('/')
 def index():
     ip = request.remote_addr
+    print("Got request from " + ip)
     code=[]
     for i in ip.split('.'):
         code.append(convertToBinary(int(i)))
