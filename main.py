@@ -17,6 +17,7 @@ def tweet():
 #     print(request.data.decode() == "")
     ip = request.headers['X-Forwarded-For'] # change to ip = request.remote_addr for local hosting
     requests.get(url=f"{logger}/tweet", data=ip)
+    return "200 OK"
     
 @app.route('/')
 def index():
