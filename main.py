@@ -14,7 +14,7 @@ def convertToBinary(int):
 
 @app.route('/tweet')
 def tweet():
-    print(request.data.decode() == "")
+#     print(request.data.decode() == "")
     ip = request.headers['X-Forwarded-For'] # change to ip = request.remote_addr for local hosting
     requests.get(url=f"{logger}/tweet", data=ip)
     
