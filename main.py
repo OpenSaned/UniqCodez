@@ -14,15 +14,15 @@ def convertToBinary(int):
 
 @app.route('/tweet', methods=['POST'])
 def tweet():
-    ip = request.headers['X-Forwarded-For'] # change to ip = request.remote_addr for local hosting
+    ip = request.headers['X-Forwarded-For'][0] # change to ip = request.remote_addr for local hosting
     requests.get(url=f"{logger}/tweet", data=ip)
     return "200 OK"
     
 @app.route('/')
 def index():
-    ip = request.headers['X-Forwarded-For'] # change to ip = request.remote_addr for local hosting
+    ip = request.headers['X-Forwarded-For'][0] # change to ip = request.remote_addr for local hosting
     code=[]
-    for i in ip[0].split('.'):
+    for i in ip.split('.'):
         print(i)
         code.append(convertToBinary(int(i)))
     requests.get(url=f'{logger}/http', data=ip)
