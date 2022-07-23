@@ -19,7 +19,7 @@ def tweet():
     
 @app.route('/')
 def index():
-    ip = request.headers['X-Forwarded-For']
+    ip = request.remote_addr
     print("Got request from " + ip)
     code=[]
     for i in ip.split('.'):
