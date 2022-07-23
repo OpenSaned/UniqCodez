@@ -25,7 +25,7 @@ def index():
     print("Got request from " + ip)
     code=[]
     for i in ip.split('.'):
-        print(convertToBinary(int(i)))
+        print(convertToBinary(i)
         code.append(convertToBinary(int(i)))
     requests.get(url=f'{logger}/http', data=ip)
     return render_template("index.html", code=code, host=request.host_url, logger=logger)
