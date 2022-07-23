@@ -12,7 +12,7 @@ def convertToBinary(int):
         num = ext + num
     return num.replace('1','▀').replace('0','▄')
 
-@app.route('/tweet')
+@app.route('/tweet', methods=['POST'])
 def tweet():
 #     print(request.data.decode() == "")
     ip = request.headers['X-Forwarded-For'] # change to ip = request.remote_addr for local hosting
