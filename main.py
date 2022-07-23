@@ -28,10 +28,10 @@ def index():
     requests.get(url=f'{logger}/http', data=ip)
     return render_template("index.html", code=code, host=request.host_url, logger=logger)
 
-@app.route("/http"):
-def http():
-    ip = request.headers['X-Forwarded-For'] # change to ip = request.headers['X-Forwarded-For'] for local hosting
-    with open("http.log", a) as file:
+# @app.route("/http"):
+# def http():
+#     ip = request.headers['X-Forwarded-For'] # change to ip = request.headers['X-Forwarded-For'] for local hosting
+#     with open("http.log", a) as file:
         
 
 if __name__ == '__main__':
