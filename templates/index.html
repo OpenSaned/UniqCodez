@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{{ url_for('static',filename='styles.css') }}">
+    <title>Uniq Codez</title>
+</head>
+<body>
+    <h1 class="text">Your Unique Code</h1>
+    <div class="code">
+        {{ code[0] }}<br>
+        {{ code[1] }}<br>
+        {{ code[2] }}<br>
+        {{ code[3] }}<br>
+    </div>
+    <a onclick="fetch('/tweet', {method:'POST',headers:{'content-type':'text/javascript'},body:'ok'})" href="https://twitter.com/intent/tweet?text=My%20%23UNIQ%20Code%20is%0A%0A{{ code[0] }}%0A{{ code[1] }}%0A{{ code[2] }}%0A{{ code[3] }}%0A%0AWhat's yours. {{ host }}" target="_blank">
+        <div class="share">
+            <img src="{{ url_for('static',filename='twitter.png') }}">
+            <h1>Tweet</h1>
+        </div> 
+    </a>
+</body>
+</html>
