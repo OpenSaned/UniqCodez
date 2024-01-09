@@ -26,5 +26,7 @@ def index():
     with open("http.log", "a") as f:
         f.write(f"{ip} - {time()}\n")
     return render_template("index.html", code=code, host="uniqcodez.vercel.app")
-        
+
+if __name__ = "__main__":
+    app.run(debug=True)
 
