@@ -28,5 +28,4 @@ def index():
         f.write(f"{ip} - {time()}\n")
     return render_template("index.html", code=code, host="uniqcodez.vercel.app")
         
-if __name__ == "__main__":
-    app.run(host="0.0.0.0",port=80,debug=True)  
+
