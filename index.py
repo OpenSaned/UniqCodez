@@ -26,7 +26,7 @@ def index():
         code.append(convertToBinary(int(i)))
     with open("http.log", "a") as f:
         f.write(f"{ip} - {time()}\n")
-    return render_template("index.html", code=code, host="uniqcodez.tk")
+    return render_template("index.html", code=code, host="uniqcodez.vercel.app")
         
 if __name__ == "__main__":
     app.run(host="0.0.0.0",port=80,debug=True)  
