@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template
 from time import time
 import os
-import requests
 
 app = Flask(__name__)
 def convertToBinary(int):
